@@ -67,9 +67,6 @@
                                 <div class="swiper-slide">
                                     <ul class="list-n">
                                         <li>
-                                            <img src="res/images/3/0.png">
-                                        </li>
-                                        <li>
                                             <img src="res/images/3/1.png">
                                         </li>
                                         <li>
@@ -85,8 +82,15 @@
                                         <li>
                                             <img src="res/images/3/4.png">
                                         </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul class="list-n">
                                         <li>
                                             <img src="res/images/3/5.png">
+                                        </li>
+                                        <li>
+                                            <img src="res/images/3/6.png">
                                         </li>
                                     </ul>
                                 </div>
@@ -108,7 +112,7 @@
                     <div class="content">
                         <div class="swiper-container" id="swiperAbout">
                             <div class="swiper-wrapper" id="positions">
-                                <div class="swiper-slide">
+                                <!-- <div class="swiper-slide">
                                     <h5>漱口水车间主管（1名）</h5>
 
                                     <h6>岗位职责</h6>
@@ -154,11 +158,11 @@
                                     <p>2、五险一金</p>
                                     <p>3、年终奖</p>
                                     <p>4、年度旅游</p>
-                                </div>
+                                </div> -->
                             </div>
+                            <div class="swiper-pagination"></div>
                             <div class="swiper-button-prev swiper_btn"></div>
                             <div class="swiper-button-next swiper_btn"></div>
-                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -168,15 +172,16 @@
             <div class="swiper-slide slide-middle slide-5">
                 <div class="slide-wrap">
                     <div class="title">
-                        <img src="res/images/5/01.png">
+
+                    </div>
+                    <div class="content">
+                        <img class="ajl-contact" src="res/images/5/01.png">
                         <p>联系人：陈小姐</p>
                         <p>联系电话：0596-2107517</p>
                         <p>地址：漳州市龙文区北环城路123号</p>
                     </div>
-                    <div class="content">
-                        <img src="res/images/5/00.gif">
-                    </div>
                 </div>
+                <img class="ajl-qrcode" src="res/images/5/00.gif">
             </div>
 
         </div>
@@ -195,10 +200,11 @@
         var isWeixin = ua.indexOf('micromessenger') != -1;
         var isAndroid = ua.indexOf('android') != -1;
         var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-        // if (!isWeixin) {
-        //     document.head.innerHTML = '<title>抱歉，出错了</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css" rel="external nofollow" >';
-        //     document.body.innerHTML = '<div class="weui_msg"><div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div><div class="weui_text_area"><h4 class="weui_msg_title">请在微信客户端打开链接</h4></div></div>';
-        // }
+        if (!isAndroid || isIos) {
+            // if (!isWeixin) {
+            document.head.innerHTML = '<title>抱歉，出错了</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css" rel="external nofollow" >';
+            document.body.innerHTML = '<div class="weui_msg"><div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div><div class="weui_text_area"><h4 class="weui_msg_title">请在手机浏览器打开链接</h4></div></div>';
+        }
     </script>
 </body>
 

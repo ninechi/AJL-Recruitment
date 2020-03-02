@@ -47,6 +47,25 @@ $(function() {
     $(window).on("load resize", function() {
         joinLineHeight(); //Join line height
     });
+
+    // load recruitment data
+    $.ajax({
+        type: 'get',
+        // dataType: 'jsonp',
+        // jsonp: "callback",
+        // jsonpCallback: "?",
+        url: 'http://questionnaire.fjajl.cn:891/Handlers/HRADept/Recruitment/Getpositions.ashx',
+        success: function(result) {
+            console.log(result);
+            var d = JSON.parse(result);
+            if (d.success) {
+                $('#positions').empty();
+                $('#positions').append(d.data);
+            } else {
+                alert('获取招聘信息失败！');
+            }
+        }
+    });
 });
 
 

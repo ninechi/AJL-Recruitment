@@ -331,9 +331,10 @@ body {
     width: 100%;
 }
 
-.slide-5 .title {
+
+/* .slide-5 .title {
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 1vh;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 -1px 0 rgba(0, 0, 0, .2);
@@ -343,14 +344,30 @@ body {
     width: 70vw;
     height: 70vw;
     margin-bottom: 10vh;
+} */
+
+
+/* .slide-5 .content {
+    height: 100vh;
+} */
+
+.slide-5 .content {
+    margin-bottom: 25vh;
+    text-align: center;
 }
 
-.slide-5 .title p {
+.slide-5 .content p {
     font-weight: bold;
     font-size: 4vw;
 }
 
-.slide-5 .content {
+.slide-5 .content .ajl-contact {
+    width: 70vw;
+    height: 70vw;
+    margin-bottom: 2vh;
+}
+
+.slide-5 .ajl-qrcode {
     position: absolute;
     bottom: 0;
 }
