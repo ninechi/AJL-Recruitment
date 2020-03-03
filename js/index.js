@@ -27,22 +27,14 @@ $(function() {
         paginationClickable: false,
         pagination: '#jeff-swiper-container .swiper-pagination',
         // speed: 2000,
-        loop: true,
+        // loop: true,
         slidesPerView: "auto",
-        prevButton: '#jeff-swiper-container .swiper-button-prev',
-        nextButton: '#jeff-swiper-container .swiper-button-next',
+        // prevButton: '#jeff-swiper-container .swiper-button-prev',
+        // nextButton: '#jeff-swiper-container .swiper-button-next',
         // autoplay: true
     });
 
-    /***About-Swiper*/
-    $("#swiperAbout").swiper({
-        paginationClickable: false,
-        pagination: '#swiperAbout .swiper-pagination',
-        speed: 300,
-        slidesPerView: "auto",
-        prevButton: '#swiperAbout .swiper-button-prev',
-        nextButton: '#swiperAbout .swiper-button-next'
-    });
+
 
     $(window).on("load resize", function() {
         joinLineHeight(); //Join line height
@@ -61,6 +53,16 @@ $(function() {
             if (d.success) {
                 $('#positions').empty();
                 $('#positions').append(d.data);
+
+                /***About-Swiper*/
+                $("#swiperAbout").swiper({
+                    paginationClickable: false,
+                    pagination: '#swiperAbout .swiper-pagination',
+                    speed: 300,
+                    slidesPerView: "auto",
+                    prevButton: '#swiperAbout .swiper-button-prev',
+                    nextButton: '#swiperAbout .swiper-button-next'
+                });
             } else {
                 alert('获取招聘信息失败！');
             }

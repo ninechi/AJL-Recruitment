@@ -5,12 +5,12 @@
     <title>爱洁丽企业招聘</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no, email=no">
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/swiper.css">
-    <link rel="stylesheet" type="text/css" href="css/pages.css?11111111111">
+    <link rel="stylesheet" type="text/css" href="css/pages.css?v=1.0.0.001">
 </head>
 
 <body>
@@ -58,10 +58,11 @@
             <!--Three-->
             <div class="swiper-slide slide-middle slide-3">
                 <div class="slide-wrap">
-                    <!-- <div class="jeff-arrow"><i class="icon-arrow"></i></div> -->
                     <div class="title">
                     </div>
                     <div class="content">
+                        <div class="jeff-left-arrow"><i class="jeff-left-arrow-icon"></i></div>
+                        <div class="jeff-right-arrow"><i class="jeff-right-arrow-icon"></i></div>
                         <div class="swiper-container" id="jeff-swiper-container">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -95,8 +96,8 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="swiper-button-prev swiper_btn"></div>
-                            <div class="swiper-button-next swiper_btn"></div>
+                            <!-- <div class="swiper-button-prev swiper_btn"></div>
+                            <div class="swiper-button-next swiper_btn"></div> -->
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
@@ -107,6 +108,8 @@
             <div class="swiper-slide slide-4">
                 <div class="slide-wrap">
                     <div class="title">
+                        <div class="jeff-left-arrow"><i class="jeff-left-arrow-icon"></i></div>
+                        <div class="jeff-right-arrow"><i class="jeff-right-arrow-icon"></i></div>
                         <h6>招聘岗位</h6>
                     </div>
                     <div class="content">
@@ -161,8 +164,8 @@
                                 </div> -->
                             </div>
                             <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev swiper_btn"></div>
-                            <div class="swiper-button-next swiper_btn"></div>
+                            <!-- <div class="swiper-button-prev swiper_btn"></div>
+                            <div class="swiper-button-next swiper_btn"></div> -->
                         </div>
                     </div>
                 </div>
@@ -193,14 +196,20 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/swiper.jquery.min.js"></script>
     <script src="js/countUp.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/index.js?v=1.0.0.001"></script>
 
     <script type="text/javascript">
+        //清除缓存
+        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+            window.applicationCache.update();
+        }
+
+        //判断ua
         var ua = navigator.userAgent.toLowerCase();
         var isWeixin = ua.indexOf('micromessenger') != -1;
         var isAndroid = ua.indexOf('android') != -1;
         var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-        if (!isAndroid || isIos) {
+        if (!isAndroid && !isIos) {
             // if (!isWeixin) {
             document.head.innerHTML = '<title>抱歉，出错了</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"><link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.1/weui.css" rel="external nofollow" >';
             document.body.innerHTML = '<div class="weui_msg"><div class="weui_icon_area"><i class="weui_icon_info weui_icon_msg"></i></div><div class="weui_text_area"><h4 class="weui_msg_title">请在手机浏览器打开链接</h4></div></div>';
